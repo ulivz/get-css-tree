@@ -1,4 +1,4 @@
-import htmlparser from 'htmlparser2'
+import SimpleHtmlParser from './src/html-parser'
 
 /**
  * Get html tree by parsing
@@ -10,11 +10,11 @@ export function getHtmlTree(html) {
   const stack = []
   const htmltree = []
 
-  const onopentag = (name, attribs) => {
+  const startElement = (name, attrs) => {
     const top = stack[stack.length - 1]
     const tag = {
+      attrs,
       tagname: name,
-      class: attribs.class,
       nodes: []
     }
     stack.push(tag)
@@ -25,15 +25,18 @@ export function getHtmlTree(html) {
     }
   }
 
-  const onclosetag = () => stack.pop()
+  const endElement = () => stack.pop()
 
-  const parser = new htmlparser.Parser(
-    { onopentag, onclosetag },
-    { decodeEntities: true }
-  )
+  const noop = () => {
+  }
 
-  parser.write(html)
-  parser.end()
+  const parser = new SimpleHtmlParser()
+  parser.parse(html, {
+    startElement,
+    endElement,
+    characters: noop,
+    comment: noop
+  })
 
   return htmltree
 }
@@ -60,7 +63,8 @@ export function getCSSTreeByHtmlTree(htmltree) {
 
   function gen(tag, depth) {
     const indent = getIndent(depth)
-    const selector = tag.class ? '.' + tag.class : tag.tagname
+    const tagClass = tag.attrs.find(attr => attr.name === 'class').value
+    const selector = tagClass ? '.' + tagClass : tag.tagname
     if (tag.nodes.length > 0) {
       code.push(`${indent}${selector} {`)
       for (const item of tag.nodes) {

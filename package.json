@@ -38,9 +38,7 @@
       }
     }
   },
-  "dependencies": {
-    "htmlparser2": "^3.9.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "jest-cli": "^19.0.0",
     "eslint-config-rem": "^3.0.0",
