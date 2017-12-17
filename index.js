@@ -6,7 +6,7 @@ import SimpleHtmlParser from './src/html-parser'
  * @param html
  * @returns {Array}
  */
-export function getHtmlTree(html) {
+function getHtmlTree(html) {
   const stack = []
   const htmltree = []
 
@@ -48,7 +48,7 @@ export function getHtmlTree(html) {
  * @returns {string}
  */
 
-export function getCSSTreeByHtmlTree(htmltree) {
+function getCSSTreeByHtmlTree(htmltree) {
   const code = []
   const space = '	'
 
@@ -95,7 +95,10 @@ export function getCSSTreeByHtmlTree(htmltree) {
  * @returns {string}
  */
 
-export default function getCSSTree(html) {
+export default function cssTreeGetter(html) {
   const htmltree = getHtmlTree(html)
   return getCSSTreeByHtmlTree(htmltree)
 }
+
+cssTreeGetter.getCSSTreeByHtmlTree = getCSSTreeByHtmlTree
+cssTreeGetter.getHtmlTree = getHtmlTree

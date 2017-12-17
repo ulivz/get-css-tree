@@ -1,5 +1,5 @@
 {
-  "name": "get-css-tree",
+  "name": "css-tree-getter",
   "version": "0.0.0",
   "description": "my superior project",
   "repository": {
@@ -15,7 +15,7 @@
     "lint": "xo",
     "lint:fix": "xo --fix",
     "prepublish": "npm run build",
-    "build": "bili --entry index.js --format cjs,es,umd --exports named"
+    "build": "bili --entry index.js --format cjs,es,umd --exports default --name cssTreeGetter"
   },
   "author": "ULIVZ <chl814@foxmail.com>",
   "license": "MIT",
