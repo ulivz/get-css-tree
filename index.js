@@ -1,4 +1,4 @@
-import htmlparser  from 'htmlparser2'
+import htmlparser from 'htmlparser2'
 
 /**
  * Get html tree by parsing
@@ -11,8 +11,8 @@ export function getHtmlTree(html) {
   const htmltree = []
 
   const onopentag = (name, attribs) => {
-    let top = stack[stack.length - 1]
-    let tag = {
+    const top = stack[stack.length - 1]
+    const tag = {
       tagname: name,
       class: attribs.class,
       nodes: []
@@ -46,7 +46,7 @@ export function getHtmlTree(html) {
  */
 
 export function getCSSTreeByHtmlTree(htmltree) {
-  let code = []
+  const code = []
   const space = '	'
 
   function getIndent(depth) {
@@ -59,11 +59,11 @@ export function getCSSTreeByHtmlTree(htmltree) {
   }
 
   function gen(tag, depth) {
-    const indent = getIndent(depth);
+    const indent = getIndent(depth)
     const selector = tag.class ? '.' + tag.class : tag.tagname
-    if (tag.nodes.length) {
+    if (tag.nodes.length > 0) {
       code.push(`${indent}${selector} {`)
-      for (let item of tag.nodes) {
+      for (const item of tag.nodes) {
         gen(item, depth + 1)
       }
       code.push(`${indent}}`)
@@ -74,7 +74,7 @@ export function getCSSTreeByHtmlTree(htmltree) {
   }
 
   if (Array.isArray(htmltree)) {
-    for (let tag of htmltree) {
+    for (const tag of htmltree) {
       gen(tag, 0)
     }
   } else {

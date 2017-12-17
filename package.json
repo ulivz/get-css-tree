@@ -13,6 +13,7 @@
     "test:cov": "jest --coverage && npm run lint",
     "test": "npm run lint && jest",
     "lint": "xo",
+    "lint:fix": "xo --fix",
     "prepublish": "npm run build",
     "build": "bili --entry index.js --format cjs,es"
   },
