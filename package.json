@@ -1,0 +1,56 @@
+{
+  "name": "get-css-tree",
+  "version": "0.0.0",
+  "description": "my superior project",
+  "repository": {
+    "url": "ULIVZ/get-css-tree",
+    "type": "git"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test:cov": "jest --coverage && npm run lint",
+    "test": "npm run lint && jest",
+    "lint": "xo",
+    "prepublish": "npm run build",
+    "build": "bili --entry index.js --format cjs,es"
+  },
+  "author": "ULIVZ <chl814@foxmail.com>",
+  "license": "MIT",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "node": "current"
+              }
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "htmlparser2": "^3.9.2"
+  },
+  "devDependencies": {
+    "jest-cli": "^19.0.0",
+    "eslint-config-rem": "^3.0.0",
+    "xo": "^0.18.0",
+    "babel-preset-env": "^1.4.0",
+    "bili": "^0.17.0"
+  },
+  "xo": {
+    "extends": "rem",
+    "envs": [
+      "jest"
+    ]
+  }
+}
