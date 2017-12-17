@@ -15,7 +15,7 @@
     "lint": "xo",
     "lint:fix": "xo --fix",
     "prepublish": "npm run build",
-    "build": "bili --entry index.js --format cjs,es"
+    "build": "bili --entry index.js --format cjs,es,umd --exports named"
   },
   "author": "ULIVZ <chl814@foxmail.com>",
   "license": "MIT",
