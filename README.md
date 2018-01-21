@@ -13,11 +13,10 @@ npm i html-css-transformer
 
 ```js
 const htmlCssTransformer = require('html-css-transformer')
-htmlCssTransformer('<div class="app"></div>')
-//=> '.'
+htmlCssTransformer(/* input string */)
 ```
 
-For example, input like:
+For example, input:
 
 ```html
 <div class="wrapper">
