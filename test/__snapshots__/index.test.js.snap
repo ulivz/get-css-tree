@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should get correct css tree 1`] = `
+exports[`should get correct css output 1`] = `
 ".header {
 	.tabs {
 	}
