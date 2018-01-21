@@ -1,4 +1,4 @@
-import SimpleHtmlParser from './src/html-parser'
+import SimpleHtmlParser from './html-parser'
 
 /**
  * Get html tree by parsing
@@ -89,16 +89,13 @@ function getCSSTreeByHtmlTree(htmltree) {
 }
 
 /**
- * Get css tree by html string
+ * Html to Scss
  *
- * @param {string} html
- * @returns {string}
+ * @param {string} html string
+ * @returns {string} css string
  */
 
-export default function cssTreeGetter(html) {
+export default function htmlCssTransformer(html) {
   const htmltree = getHtmlTree(html)
   return getCSSTreeByHtmlTree(htmltree)
 }
-
-cssTreeGetter.getCSSTreeByHtmlTree = getCSSTreeByHtmlTree
-cssTreeGetter.getHtmlTree = getHtmlTree
