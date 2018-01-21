@@ -15,7 +15,7 @@
     "lint": "xo",
     "lint:fix": "xo --fix",
     "prepublish": "npm run build",
-    "build": "bili --entry index.js --format cjs,es,umd,umd-min --exports default --name htmlCssTransformer"
+    "build": "bili --entry index.js --format cjs,es,umd --exports default --name htmlCssTransformer"
   },
   "author": "ULIVZ <chl814@foxmail.com>",
   "license": "MIT",
@@ -40,11 +40,11 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "jest-cli": "^19.0.0",
-    "eslint-config-rem": "^3.0.0",
-    "xo": "^0.18.0",
     "babel-preset-env": "^1.4.0",
-    "bili": "^0.17.0"
+    "bili": "^1.6.5",
+    "eslint-config-rem": "^3.0.0",
+    "jest-cli": "^19.0.0",
+    "xo": "^0.18.0"
   },
   "xo": {
     "extends": "rem",
