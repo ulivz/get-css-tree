@@ -1,9 +1,9 @@
 {
-  "name": "css-tree-getter",
-  "version": "0.0.0",
-  "description": "my superior project",
+  "name": "html-css-transformer",
+  "version": "0.0.1",
+  "description": "html css transformer",
   "repository": {
-    "url": "ULIVZ/get-css-tree",
+    "url": "ULIVZ/html-css-transformer",
     "type": "git"
   },
   "files": [
@@ -15,7 +15,7 @@
     "lint": "xo",
     "lint:fix": "xo --fix",
     "prepublish": "npm run build",
-    "build": "bili --entry index.js --format cjs,es,umd --exports default --name cssTreeGetter"
+    "build": "bili --entry index.js --format cjs,es,umd,umd-min --exports default --name htmlCssTransformer"
   },
   "author": "ULIVZ <chl814@foxmail.com>",
   "license": "MIT",

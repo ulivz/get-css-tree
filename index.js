@@ -63,8 +63,8 @@ function getCSSTreeByHtmlTree(htmltree) {
 
   function gen(tag, depth) {
     const indent = getIndent(depth)
-    const tagClass = tag.attrs.find(attr => attr.name === 'class').value
-    const selector = tagClass ? '.' + tagClass : tag.tagname
+    const tagClass = tag.attrs.find(attr => attr.name === 'class')
+    const selector = tagClass ? '.' + tagClass.value : tag.tagname
     if (tag.nodes.length > 0) {
       code.push(`${indent}${selector} {`)
       for (const item of tag.nodes) {

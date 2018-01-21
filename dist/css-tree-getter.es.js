@@ -199,8 +199,8 @@ function getCSSTreeByHtmlTree(htmltree) {
 
   function gen(tag, depth) {
     var indent = getIndent(depth);
-    var tagClass = tag.attrs.find(function (attr) { return attr.name === 'class'; }).value;
-    var selector = tagClass ? '.' + tagClass : tag.tagname;
+    var tagClass = tag.attrs.find(function (attr) { return attr.name === 'class'; });
+    var selector = tagClass ? '.' + tagClass.value : tag.tagname;
     if (tag.nodes.length > 0) {
       code.push(("" + indent + selector + " {"));
       for (var i = 0, list = tag.nodes; i < list.length; i += 1) {
