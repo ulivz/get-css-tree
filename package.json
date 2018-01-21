@@ -9,6 +9,7 @@
   "files": [
     "dist"
   ],
+  "main": "dist/htmlCssTransformer.js",
   "scripts": {
     "test:cov": "jest --coverage && npm run lint",
     "test": "npm run lint && jest",
