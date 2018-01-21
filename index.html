@@ -11,7 +11,7 @@
 <script>
   window.dmo({
     title: 'Html CSS Transformer',
-    input: '<div id="app"></div>',
+    input: '<div class="wrapper"><div class="sidebar"></div><div class="content"></div></div>',
     transformers: {
       scss: function (raw) {
         return cssTreeGetter(raw)

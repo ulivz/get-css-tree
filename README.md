@@ -1,22 +1,40 @@
+# html-css-transformer
 
-# get-css-tree
-
-[![NPM version](https://img.shields.io/npm/v/get-css-tree.svg?style=flat)](https://npmjs.com/package/get-css-tree) [![NPM downloads](https://img.shields.io/npm/dm/get-css-tree.svg?style=flat)](https://npmjs.com/package/get-css-tree) [![CircleCI](https://circleci.com/gh/ULIVZ/get-css-tree/tree/master.svg?style=shield)](https://circleci.com/gh/ULIVZ/get-css-tree/tree/master)  [![codecov](https://codecov.io/gh/ULIVZ/get-css-tree/branch/master/graph/badge.svg)](https://codecov.io/gh/ULIVZ/get-css-tree)
+[![NPM version](https://img.shields.io/npm/v/html-css-transformer.svg?style=flat)](https://npmjs.com/package/html-css-transformer) [![NPM downloads](https://img.shields.io/npm/dm/html-css-transformer.svg?style=flat)](https://npmjs.com/package/html-css-transformer) [![CircleCI](https://circleci.com/gh/ULIVZ/html-css-transformer/tree/master.svg?style=shield)](https://circleci.com/gh/ULIVZ/html-css-transformer/tree/master)  [![codecov](https://codecov.io/gh/ULIVZ/html-css-transformer/branch/master/graph/badge.svg)](https://codecov.io/gh/ULIVZ/html-css-transformer)
  [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/ULIVZ/donate)
 
 ## Install
 
 ```bash
-npm i get-css-tree
+npm i html-css-transformer
 ```
 
 ## Usage
 
 ```js
-const getCssTree = require('get-css-tree')
+const htmlCssTransformer = require('html-css-transformer')
+htmlCssTransformer('<div class="app"></div>')
+//=> '.'
+```
 
-getCssTree()
-//=> foo
+For example, input like:
+
+```html
+<div class="wrapper">
+  <div class="sidebar"></div>
+  <div class="content"></div>
+</div>
+```
+
+Then the output will be:
+
+```scss
+.wrapper {
+	.sidebar {
+	}
+	.content {
+	}
+}
 ```
 
 ## Contributing
@@ -30,7 +48,7 @@ getCssTree()
 
 ## Author
 
-**get-css-tree** © [ulivz](https://github.com/ULIVZ), Released under the [MIT](./LICENSE) License.<br>
-Authored and maintained by ulivz with help from contributors ([list](https://github.com/ULIVZ/get-css-tree/contributors)).
+**html-css-transformer** © [ulivz](https://github.com/ULIVZ), Released under the [MIT](./LICENSE) License.<br>
+Authored and maintained by ulivz with help from contributors ([list](https://github.com/ULIVZ/html-css-transformer/contributors)).
 
 > [github.com/ulivz](https://github.com/ulivz) · GitHub [@ulivz](https://github.com/ULIVZ)
