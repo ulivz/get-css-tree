@@ -8,3 +8,7 @@ export function getIndent(depth) {
   }
   return indent
 }
+
+export function getUuid() {
+  return new Date().getTime() + Math.random() * 100
+}
