@@ -1,4 +1,4 @@
-import SimpleHtmlParser from './html-parser'
+import parse7 from 'parse7'
 
 /**
  * Get html tree by parsing
@@ -10,7 +10,7 @@ function getHtmlTree(html) {
   const stack = []
   const htmltree = []
 
-  const startElement = (name, attrs) => {
+  const tagStart = (name, attrs) => {
     const top = stack[stack.length - 1]
     const tag = {
       attrs,
@@ -25,18 +25,9 @@ function getHtmlTree(html) {
     }
   }
 
-  const endElement = () => stack.pop()
+  const tagEnd = () => stack.pop()
 
-  const noop = () => {
-  }
-
-  const parser = new SimpleHtmlParser()
-  parser.parse(html, {
-    startElement,
-    endElement,
-    characters: noop,
-    comment: noop
-  })
+  parse7(html, { tagStart, tagEnd })
 
   return htmltree
 }
