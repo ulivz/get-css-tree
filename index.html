@@ -2,22 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Html Css Transformer</title>
+  <title>Html CSS Transformer</title>
 </head>
 <body>
 <div id="app"></div>
 <script src="https://unpkg.com/dmo"></script>
-<script src="https://unpkg.com/html-css-transformer"></script>
+<script src="dist/htmlCssTransformer.js"></script>
 <script>
   window.dmo({
     title: 'Html CSS Transformer',
+    username: 'ulivz',
+    name: 'html-css-transformer',
     input: `<div class="wrapper">
+  <input class="search-input"/>
   <div class="sidebar"></div>
   <div class="content"></div>
 </div>`,
     transformers: {
       scss: function (raw) {
-        return htmlCssTransformer(raw)
+        return htmlCssTransformer.html2scss(raw)
       }
     },
     modes: [

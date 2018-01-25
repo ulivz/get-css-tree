@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should get correct css output 1`] = `
+exports[`SCSS - should get correct css output 1`] = `
 ".header {
 	.tabs {
 	}
