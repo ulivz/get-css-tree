@@ -1,4 +1,4 @@
-const SPACE = '	'
+const SPACE = '\t'
 
 export function getIndent(depth) {
   let indent = ''

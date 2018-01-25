@@ -7,7 +7,7 @@
 <body>
 <div id="app"></div>
 <script src="https://unpkg.com/dmo"></script>
-<script src="https://unpkg.com/htmlCssTransformer"></script>
+<script src="https://unpkg.com/dist/htmlCssTransformer"></script>
 <script>
   window.dmo({
     title: 'Html CSS Transformer',
@@ -15,20 +15,25 @@
     name: 'html-css-transformer',
     input: `<div class="wrapper">
   <input class="search-input"/>
-  <div class="sidebar"></div>
+  <div class="sidebar">
+   <ul class="sidebar-list">
+     <li class="sidebar-item"></li>
+     <li class="sidebar-item"></li>
+     <li class="sidebar-item"></li>
+     <li class="sidebar-item"></li>
+     <li class="sidebar-item"></li>
+   </ul>
+  </div>
   <div class="content"></div>
-</div>`,
+ </div>`,
     transformers: {
       scss: function (raw) {
         return htmlCssTransformer.html2scss(raw)
+      },
+      stylus: function (raw) {
+        return htmlCssTransformer.html2stylus(raw)
       }
-    },
-    modes: [
-      {
-        key: 'scss',
-        text: 'Html to SCSS'
-      }
-    ]
+    }
   })
 </script>
 </body>

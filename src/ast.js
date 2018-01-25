@@ -3,7 +3,7 @@ import parse7 from 'parse7'
 /**
  * Get html AST by parsing
  *
- * @param html
+ * @param {string} html
  * @returns {Array}
  */
 export function getHtmlAST(html) {

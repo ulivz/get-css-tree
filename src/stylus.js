@@ -8,7 +8,7 @@ import { getIndent } from './utils'
  * @returns {string}
  */
 
-export default function html2scss(html) {
+export default function html2stylus(html) {
   const AST = getHtmlAST(html)
   const code = []
 
@@ -17,14 +17,14 @@ export default function html2scss(html) {
     const tagClass = tag.attrs.find(attr => attr.name === 'class')
     const selector = tagClass ? '.' + tagClass.value : tag.tagname
     if (tag.nodes.length > 0) {
-      code.push(`${indent}${selector} {`)
+      code.push(`${indent}${selector}`)
       for (const item of tag.nodes) {
         gen(item, depth + 1)
       }
-      code.push(`${indent}}`)
+      code.push(`${indent}`)
     } else {
-      code.push(`${indent}${selector} {`)
-      code.push(`${indent}}`)
+      code.push(`${indent}${selector}`)
+      code.push(`${indent}`)
     }
   }
 
