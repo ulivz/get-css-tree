@@ -1,3 +1,14 @@
+<a name="0.0.5"></a>
+## [0.0.5](https://github.com/ULIVZ/html-css-transformer/compare/v0.0.4...v0.0.5) (2018-01-25)
+
+
+### Features
+
+* add stylus transform ([f8ab7f4](https://github.com/ULIVZ/html-css-transformer/commit/f8ab7f4))
+* add uuid for code gen to avoid parallel level duplicate code ([f20ec62](https://github.com/ULIVZ/html-css-transformer/commit/f20ec62))
+
+
+
 <a name="0.0.4"></a>
 ## [0.0.4](https://github.com/ULIVZ/html-css-transformer/compare/v0.0.3...v0.0.4) (2018-01-25)
 
