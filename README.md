@@ -1,7 +1,7 @@
 # html-css-transformer
 
 [![NPM version](https://img.shields.io/npm/v/html-css-transformer.svg?style=flat)](https://npmjs.com/package/html-css-transformer) [![NPM downloads](https://img.shields.io/npm/dm/html-css-transformer.svg?style=flat)](https://npmjs.com/package/html-css-transformer) [![CircleCI](https://circleci.com/gh/ULIVZ/html-css-transformer/tree/master.svg?style=shield)](https://circleci.com/gh/ULIVZ/html-css-transformer/tree/master)  [![codecov](https://codecov.io/gh/ULIVZ/html-css-transformer/branch/master/graph/badge.svg)](https://codecov.io/gh/ULIVZ/html-css-transformer)
- [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/ULIVZ/donate)
+ [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/ULIVZ/donate) [![Greenkeeper badge](https://badges.greenkeeper.io/ulivz/html-css-transformer.svg)](https://greenkeeper.io/)
 
 ## Install
 
